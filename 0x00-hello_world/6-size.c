@@ -12,7 +12,7 @@
 	char c;
 	int i;
 	long li;
-	lomg long lli;
+	long long lli;
 	float f;
 
 	printf("size of char: %ld byte(s)\n", sizeof(c));
