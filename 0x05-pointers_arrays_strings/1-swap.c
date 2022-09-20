@@ -1,3 +1,6 @@
+#ifndef MAIN_H
+#define MAIN_H
+
 #include "main.h"
 /**
  * swap_int - swaps the value of two integers
