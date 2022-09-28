@@ -12,7 +12,9 @@ int power_operation(int n, int a)
 	if (a % (n / a) == 0)
 	{
 		return (a);
+	}
 	else
+	{
 		return (-1);
 	}
 	return (0 + power_operation(n, a + 1));
