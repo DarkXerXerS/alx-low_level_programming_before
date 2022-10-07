@@ -6,24 +6,34 @@
  *
  * Return: pointer of an array of chars
  */
-char *_strdup(char *str)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *strout;
-	unsigned int i, j;
+	char *concat;
+	unsigned int len = n, index;
 
-	if (str == NULL)
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
+
+	for (index = 0; s1[index]; index++)
+		len++;
+
+	concat = malloc(sizeof(char) * (len + 1));
+
+	if (concat == NULL)
 		return (NULL);
 
-	for (i = 0; str[i] != '\0'; i++)
-		;
+	len = 0;
 
-	strout = (char *)malloc(sizeof(char) * (i + 1));
+	for (index = 0; s1[index]; index++)
+		concat[len++] = s1[index];
 
-	if (strout == NULL)
-		return (NULL);
+	for (index = 0; s2[index] && index < n; index++)
+		concat[len++] = s2[index];
 
-	for (j = 0; j <= i; j++)
-		strout[j] = str[j];
+	concat[len] = '\0';
 
-	return (strout);
+	return (concat);
 }
